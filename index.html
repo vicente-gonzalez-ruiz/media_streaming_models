@@ -92,40 +92,34 @@ display="inline" ><msub><mrow
 </p>
    <h3 class="sectionHead"><span class="titlemark">3   </span> <a 
  id="x1-40003"></a>Multiple Layer Coding (MLC) + Client/Server (C/S) Model</h3>
-<!--l. 54--><p class="noindent" > <div style="text-align:center;"> <img height=400 src="data/MLC+CS.png" /> </div>  </p>
-<div class="center" 
->
-<!--l. 55--><p class="noindent" >
-
-</p><!--l. 56--><p class="noindent" ><img 
-src="data/MLC+CS.png" alt="PIC"  
- /></p></div>
+<!--l. 54--><p class="noindent" > <div style="text-align:center;"> <img height=400 src="data/MLC+CS.png" /> </div> 
+</p>
      <ul class="itemize1">
      <li class="itemize">If the client&#x2019;s buﬀer is going to underﬂow, the client should retrieve less
      layers.</li></ul>
-<!--l. 66--><p class="noindent" >
+<!--l. 63--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">4   </span> <a 
  id="x1-50004"></a>Multiple Description Coding (MDC) + Client/Server (C/S) Model</h3>
-<!--l. 69--><p class="noindent" > <div style="text-align:center;"> <img height=400 src="data/MDC+CS.png" /> </div> 
+<!--l. 66--><p class="noindent" > <div style="text-align:center;"> <img height=400 src="data/MDC+CS.png" /> </div> 
 </p>
      <ul class="itemize1">
      <li class="itemize">If the client&#x2019;s buﬀer is going to underﬂow, the client should retrieve less
-     descriptions (this happens for the GOP<!--l. 73--><math 
+     descriptions (this happens for the GOP<!--l. 70--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ></mrow><mrow 
 ><mn>2</mn></mrow></msub 
 ></math>).</li></ul>
-                                                                  
-
-                                                                  
-<!--l. 78--><p class="noindent" >
+<!--l. 75--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">5   </span> <a 
  id="x1-60005"></a>Single Layer Coding (SLC) + Peer-to-Peer (P2P) Model</h3>
+                                                                  
+
+                                                                  
      <ul class="itemize1">
-     <li class="itemize">Due to all peers need to share the same single-layered stream, <!--l. 83--><math 
+     <li class="itemize">Due to all peers need to share the same single-layered stream, <!--l. 80--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -133,7 +127,7 @@ display="inline" ><msub><mrow
 ><mi 
 >E</mi></mrow></msub 
 ></math>
-     should never be bigger than <!--l. 83--><math 
+     should never be bigger than <!--l. 80--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -142,7 +136,7 @@ display="inline" ><msub><mrow
 >T</mi></mrow></msub 
 ></math>,
      for every peer in the cluster, or a buﬀer underﬂow will occur in those peers
-     where <!--l. 84--><math 
+     where <!--l. 81--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><msub><mrow 
 ><mi 
@@ -156,7 +150,7 @@ class="MathClass-rel">&#x003E;</mo> <msub><mrow
 ><mi 
 >T</mi></mrow></msub 
 ></math>.</li></ul>
-<!--l. 89--><p class="noindent" >
+<!--l. 86--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">6   </span> <a 
  id="x1-70006"></a>Media simulcast + Peer-to-Peer (P2P) Model</h3>
@@ -170,7 +164,7 @@ class="MathClass-rel">&#x003E;</mo> <msub><mrow
      </li>
      <li class="itemize">The time to perform a switch between channels depends on the buﬀering
      time.</li></ul>
-<!--l. 114--><p class="noindent" >
+<!--l. 111--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
  id="x1-80007"></a>Multiple Layer Coding (MLC) + Peer-to-Peer (P2P) Model</h3>
@@ -178,22 +172,22 @@ class="MathClass-rel">&#x003E;</mo> <msub><mrow
      <li class="itemize">If each layer is transmitted over a diﬀerent cluster, peers can join/left to
      more/less clusters depending on the transmission bit-rate.
      </li>
-     <li class="itemize">The transmission of the layer <!--l. 121--><math 
+     <li class="itemize">The transmission of the layer <!--l. 118--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >X</mi> <mo 
 class="MathClass-bin">−</mo> <mn>1</mn></math>
-     must be prioritized to the transmission of the layer <!--l. 122--><math 
+     must be prioritized to the transmission of the layer <!--l. 119--><math 
  xmlns="http://www.w3.org/1998/Math/MathML"  
 display="inline" ><mi 
 >X</mi></math>.</li></ul>
-                                                                  
-
-                                                                  
-<!--l. 131--><p class="noindent" >
+<!--l. 128--><p class="noindent" >
 </p>
    <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
  id="x1-90008"></a>Multiple Description Coding (MDC) + Peer-to-Peer (P2P) Model</h3>
+                                                                  
+
+                                                                  
      <ul class="itemize1">
      <li class="itemize">As in MLC, if each description is transmitted over a diﬀerent cluster, peers
      can join/left to more/less clusters depending on the transmission bit-rate.
