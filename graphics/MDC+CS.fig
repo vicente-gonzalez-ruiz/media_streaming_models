@@ -1,8 +1,8 @@
-#FIG 3.2  Produced by xfig version 3.2.5b
+#FIG 3.2  Produced by xfig version 3.2.7
 Landscape
 Center
 Metric
-A4      
+A4
 100.00
 Single
 -2
@@ -78,3 +78,4 @@ Single
 4 1 0 50 -1 0 14 0.0000 6 225 630 5400 1170 Player\001
 4 1 0 50 -1 0 12 0.0000 6 210 510 1575 1395 $t_T$\001
 4 1 0 50 -1 0 12 0.0000 6 210 510 4230 1395 $t_E$\001
+4 2 0 50 -1 0 14 0.0000 6 165 675 -45 1665 GOP 1\001

@@ -3,29 +3,69 @@
 \maketitle
 \tableofcontents
 
-\section{Single Layer Coding (SLC) + Client/Server (C/S) Model}
+\section{Chunked streams}
+\begin{itemize}
+\item In order to reduce the transport layer data overhead, the
+  streams are packetized, and each packet contains a chunk of data.
+\item The length can be constant or variable, and depends on the MTU,
+  the maximum header overhead that is allowed, the buffers size at the
+  receivers, etc.
+\end{itemize}
+
+\section{Push vs pull models}
+\begin{itemize}
+\item In push models, the sender sends the data without any feedback
+  from the receiver(s).
+\item In pull models, the receiver (usually called client) controls
+  the data-flow, i.e., which data must send the sender (usually called
+  server), depending on factors such as the available bandwidth, the
+  avaiable resources at the client, etc.
+\end{itemize}
+
+\section{On demand vs live streaming}
+\begin{itemize}
+\item Movies are streamed on demand (VoD (Video on Demand) streaming),
+  usually using pull protocols.
+\item Live events are live streamed (live streaming), usually using
+  push protocols.
+\end{itemize}
+
+%\section{Unicast vs multicast vs peer-to-peer transmissions}
+%\begin{itemize}
+%\item In unicast, the stream travels from a single sender to a single
+%  receiver. 
+%\item In a multicast transmission, the sender (never a server) sends a
+%  copy of the stream and the network replicates the stream as many
+%  times as receivers exist.
+%\item In the P2P model, the sender sends a copy or a reduced number of
+%  copies of the stream, and the receivers (called peers) retransmit
+%  the stream as many times as necessary to allow the reception of the
+%  stream to all the peers.
+%\end{itemize}
+
+%\section{Single Layer Coding (SLC) + Client/Server (C/S) Model}
 %{{{
 
-\fig{400}{SLC+CS.png}
+%\svg{SLC+CS}{400}
 
-\begin{itemize}
-\item Notice that a buffer underflow (i.e. a lost of a GOP during the
-  playback) can occur if $t_T<t_E$ (the transmission bit-rate is smaller
-  than the encoding bit-rate).
-\end{itemize}
+%\begin{itemize}
+%\item Notice that a buffer underflow (i.e. a lost of a GOP during the
+%  playback) can occur if $t_T<t_E$ (the transmission bit-rate is smaller
+%  than the encoding bit-rate).
+%\end{itemize}
 
 %}}}
 
-\section{Media simulcast + Client/Server (C/S) Model}
+%\section{Media simulcast + Client/Server (C/S) Model}
 %{{{
 
-\fig{400}{simulcast+CS.png}
+%\svg{simulcast+CS}{400}
 
-\begin{itemize}
-\item If the client's buffer is going to underflow, the client should
-  retrieve a stream with a smaller bit-rate (this happens for the
-  GOP$_2$).
-\end{itemize}
+%\begin{itemize}
+%\item If the client's buffer is going to underflow, the client should
+%  retrieve a stream with a smaller bit-rate (this happens for the
+%  GOP$_2$).
+%\end{itemize}
 % \item In a solution to provide service scalability, a media server can
 %   store (and serve) collection of non-scalable streams, depending on
 %   the characteristics of the transmission channel and the receiver
@@ -48,52 +88,52 @@
 
 %}}}
 
-\section{Multiple Layer Coding (MLC) + Client/Server (C/S) Model}
+%\section{Multiple Layer Coding (MLC) + Client/Server (C/S) Model}
 %{{{
 
-\fig{400}{MLC+CS.png}
+%\svg{MLC+CS}{400}
 
-\begin{itemize}
-\item If the client's buffer is going to underflow, the client should
-  retrieve less layers.
-\end{itemize}
+%\begin{itemize}
+%\item If the client's buffer is going to underflow, the client should
+%  retrieve less layers.
+%\end{itemize}
 
 %}}}
 
-\section{Multiple Description Coding (MDC) + Client/Server (C/S) Model}
+%\section{Multiple Description Coding (MDC) + Client/Server (C/S) Model}
 %{{{
 
-\fig{400}{MDC+CS.png}
+%\fig{400}{MDC+CS.png}
 
-\begin{itemize}
-\item If the client's buffer is going to underflow, the client should
-  retrieve less descriptions (this happens for the GOP$_2$).
-\end{itemize}
+%\begin{itemize}
+%\item If the client's buffer is going to underflow, the client should
+%  retrieve less descriptions (this happens for the GOP$_2$).
+%\end{itemize}
 
 %}}}
 
-\section{Single Layer Coding (SLC) + Peer-to-Peer (P2P) Model}
+%\section{Single Layer Coding (SLC) + Peer-to-Peer (P2P) Model}
 %{{{
 
-\begin{itemize}
-\item Due to all peers need to share the same single-layered stream,
-  $t_E$ should never be bigger than $t_T$, for every peer in the cluster,
-  or a buffer underflow will occur in those peers where $t_E>t_T$.
-\end{itemize}
+%\begin{itemize}
+%\item Due to all peers need to share the same single-layered stream,
+%  $t_E$ should never be bigger than $t_T$, for every peer in the cluster,
+%  or a buffer underflow will occur in those peers where $t_E>t_T$.
+%\end{itemize}
 
 %}}}
 
-\section{Media simulcast + Peer-to-Peer (P2P) Model}
+%\section{Media simulcast + Peer-to-Peer (P2P) Model}
 %{{{
 
-\begin{itemize}
-\item Each media can be simultaneously broadcasted but in different
-  channels (clusters of peers).
-\item Peers can switch between clusters depending on the transmission
-  bit-rate (channel switching should be fast in order to use
-  efficiently the available bandwidth).
-\item The time to perform a switch between channels depends on the
-  buffering time.
+%\begin{itemize}
+%\item Each media can be simultaneously broadcasted but in different
+%  channels (clusters of peers).
+%\item Peers can switch between clusters depending on the transmission
+%  bit-rate (channel switching should be fast in order to use
+%  efficiently the available bandwidth).
+%\item The time to perform a switch between channels depends on the
+%  buffering time.
 %, which depends on the buffer size, the transmission
 %  bit-rate and the GOP-rate, that depends on the GOP size and the
 %  picture-rate.
@@ -104,38 +144,38 @@
 % \item Due to all peers need to share the same simulcasted stream, only
 %   a high bit-rate GOP should be delivered by the source if all peers
 %   can receive such amount of data.
-\end{itemize}
+%\end{itemize}
 
 %}}}
 
-\section{Multiple Layer Coding (MLC) + Peer-to-Peer (P2P) Model}
+%\section{Multiple Layer Coding (MLC) + Peer-to-Peer (P2P) Model}
 %{{{
 
-\begin{itemize}
-\item If each layer is transmitted over a different cluster, peers can
-  join/left to more/less clusters depending on the transmission
-  bit-rate.
-\item The transmission of the layer $X-1$ must be prioritized to the
-  transmission of the layer $X$.
+%\begin{itemize}
+%\item If each layer is transmitted over a different cluster, peers can
+%  join/left to more/less clusters depending on the transmission
+%  bit-rate.
+%\item The transmission of the layer $X-1$ must be prioritized to the
+%  transmission of the layer $X$.
 % \item Because the $X$-th quality, resolution or picture-rate implies
 %   the reception of all layers up to the the $X$-th one, all peers can
 %   share the same scalable stream independently of the number of layers
 %   received.
-\end{itemize}
+%\end{itemize}
 
 %}}}
 
-\section{Multiple Description Coding (MDC) + Peer-to-Peer (P2P) Model}
+%\section{Multiple Description Coding (MDC) + Peer-to-Peer (P2P) Model}
 %{{{
 
-\begin{itemize}
-\item As in MLC, if each description is transmitted over a different
-  cluster, peers can join/left to more/less clusters depending on the
-  transmission bit-rate.
-\item However, in this case it is not necessary to prioritize the
-  transmission of the descriptions (although a peer could be rejected
-  from a cluster (description) if it becomes unsupportive).
-\end{itemize}
+%\begin{itemize}
+%\item As in MLC, if each description is transmitted over a different
+%  cluster, peers can join/left to more/less clusters depending on the
+%  transmission bit-rate.
+%\item However, in this case it is not necessary to prioritize the
+%  transmission of the descriptions (although a peer could be rejected
+%  from a cluster (description) if it becomes unsupportive).
+%\end{itemize}
 
 %}}}
 
